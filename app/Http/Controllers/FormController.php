@@ -7,16 +7,14 @@ use Illuminate\Support\Facades\Storage;
 
 class FormController extends Controller
 {
-    // Method to display the form
     public function showForm()
     {
-        return view('form'); // Replace 'form' with the name of your Blade view file
+        return view('form');
     }
 
     // Method to handle form submission
     public function store(Request $request)
     {
-        // Validate the form data
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -35,7 +33,6 @@ class FormController extends Controller
             'user_id' => 'required|integer',
         ]);
 
-        // Handle file uploads
         if ($request->hasFile('resume')) {
             $resumePath = $request->file('resume')->store('resumes', 'public');
             $validatedData['resume'] = $resumePath;
@@ -49,7 +46,6 @@ class FormController extends Controller
         // Hash the password
         $validatedData['password'] = bcrypt($validatedData['password']);
 
-        // Store the data in the database
         FormSubmission::create($validatedData);
 
         return redirect()->back()->with('success', 'Form submitted successfully!');

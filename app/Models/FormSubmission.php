@@ -11,7 +11,7 @@ class FormSubmission extends Model
 
     // protected $connection = 'stone';
     protected $connection = 'mysql';
-    protected $table = 'form_submissions'; // Specify the table name
+    protected $table = 'form_submissions'; 
 
     protected $fillable = [
         'name',

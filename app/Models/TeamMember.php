@@ -9,7 +9,6 @@ class TeamMember extends Model
 {
     use HasFactory;
 
-    // Fields that can be mass-assigned
     protected $fillable = [
         'name',
         'profile_picture',

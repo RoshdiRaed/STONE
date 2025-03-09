@@ -1,10 +1,10 @@
 @include('head')
 @include('header')
-<section class="bg-[#17161c] dark:bg-[#2f3241]"> <!-- Adjust mt-20 as needed -->b
+<section class="bg-[#17161c] dark:bg-[#2f3241]">
     <div class="container px-6 py-10 mx-auto">
 
         <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
-            <!-- Loop through team members and display each one -->
+            
             @foreach($teamMembers as $member)
             <div class="flex flex-col items-center p-8 transition-colors duration-200 transform cursor-pointer group hover:bg-[#e89846] rounded-xl" data-aos="fade-up" data-aos-delay="200">
                 <!-- Profile Picture -->
