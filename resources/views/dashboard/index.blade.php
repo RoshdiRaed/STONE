@@ -1,8 +1,8 @@
 @extends('head')
 <div class="flex h-screen">
     <!-- Sidebar -->
-    <div class="w-64 bg-gray-800 text-white p-4">
-        <h2 class="text-2xl font-bold mb-6">sDash</h2>
+    <div class="w-64 bg-[#2E303F] text-white p-4">
+        <h2 style="text-align: center" class="text-2xl font-bold mb-6 text-[#e89846]"><a href="/dashboard">Stone Dashboard</a></h2>
         <nav>
             <ul>
                 <li class="mb-4">
@@ -11,8 +11,13 @@
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="/team" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                    <a href="/blog" class="flex items-center p-2 hover:bg-gray-700 rounded">
                         <span>Articles</span>
+                    </a>
+                </li>
+                <li class="mb-4">
+                    <a href="/team" class="flex items-center p-2 hover:bg-gray-700 rounded">
+                        <span>Team</span>
                     </a>
                 </li>
                 <li class="mb-4">
@@ -31,8 +36,8 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-xl font-semibold">New Article</h1>
                 <div class="flex items-center space-x-4">
-                    <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Draft</button>
-                    <button class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">Publish</button>
+                    {{-- <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Draft</button> --}}
+                    <button class="px-4 py-2 bg-[#e89846] text-white rounded hover:bg-[#2f3241]">Publish</button>
                 </div>
             </div>
         </header>

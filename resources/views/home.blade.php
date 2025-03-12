@@ -62,12 +62,12 @@
                     </div>
                 </div>
 
-                <div class="relative overflow-hidden rounded-xl shadow-xl" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd"
+                <div class="relative overflow-hidden " data-aos="fade-left">
+                    <img src="{{ asset('img/team-spirit2.png') }}"
                         alt="Stone Team Collaboration"
                         class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#17161c]/50"></div>
+                    <div class="absolute inset-0 bg-gradient-to-"></div>
                 </div>
             </div>
         </div>
@@ -296,7 +296,7 @@
             <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                 <!-- Case Study 1 -->
                 <div class="bg-[#17161c] p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset('img/img.png') }}" alt="Case Study 1"
+                    <img src="{{ asset('img/e-commers.jpg') }}" alt="Case Study 1"
                         class="w-full h-48 object-cover rounded-lg">
                     <h3 class="mt-6 text-xl font-semibold text-[#e89846]">E-Commerce Platform</h3>
                     <p class="mt-4 text-[#ffd7b3]">
@@ -310,7 +310,7 @@
 
                 <!-- Case Study 2 -->
                 <div class="bg-[#17161c] p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="200">
-                    <img src="{{ asset('img/img.png') }}" alt="Case Study 2"
+                    <img src="{{ asset('img/brand.jpg') }}" alt="Case Study 2"
                         class="w-full h-48 object-cover rounded-lg">
                     <h3 class="mt-6 text-xl font-semibold text-[#e89846]">Brand Redesign</h3>
                     <p class="mt-4 text-[#ffd7b3]">
@@ -324,7 +324,7 @@
 
                 <!-- Case Study 3 -->
                 <div class="bg-[#17161c] p-8 rounded-lg shadow-lg" data-aos="fade-up" data-aos-delay="300">
-                    <img src="{{ asset('img/img.png') }}" alt="Case Study 3"
+                    <img src="{{ asset('img/digital.jpg') }}" alt="Case Study 3"
                         class="w-full h-48 object-cover rounded-lg">
                     <h3 class="mt-6 text-xl font-semibold text-[#e89846]">Digital Marketing Campaign</h3>
                     <p class="mt-4 text-[#ffd7b3]">
