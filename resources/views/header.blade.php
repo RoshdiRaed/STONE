@@ -1,10 +1,11 @@
-<header class="fixed inset-x-0 top-0 z-30 w-full max-w-screen-md mx-auto border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+<header
+    class="fixed inset-x-0 top-0 z-30 w-full max-w-screen-md mx-auto border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
     <div class="px-4">
         <div class="flex items-center justify-between">
             <!-- Logo -->
             <div class="flex shrink-0">
                 <a aria-current="page" class="flex items-center" href="/">
-                    <img class="h-12 w-auto" src="{{asset('img/logo-removebg-preview.png')}}" alt="">
+                    <img class="h-12 w-auto" src="{{ asset('img/logo-removebg-preview.png') }}" alt="">
                     <p class="sr-only">Website Title</p>
                 </a>
             </div>
@@ -13,7 +14,8 @@
             <div class="flex md:hidden">
                 <button id="mobile-menu-button" class="p-2 text-gray-900 focus:outline-none">
                     <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
                     </svg>
                 </button>
             </div>
@@ -26,7 +28,11 @@
                 <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                     href="{{ route('team') }}">Team</a>
                 <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                    href="{{route('about')}}">About</a>
+                    href="{{ route('about') }}">About</a>
+                <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="{{ route('blog') }}">Blog</a>
+                <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="/dashboard">Dashboard</a>
             </div>
 
             <!-- CTA Button -->

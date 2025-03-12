@@ -7,6 +7,12 @@ use App\Models\FormSubmission;
 
 class TeamMemberController extends Controller
 {
+
+    public function showBlog()
+    {
+        return view('blog');
+    }
+
     public function index()
     {
         $teamMembers = FormSubmission::all();

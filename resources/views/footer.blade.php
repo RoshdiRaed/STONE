@@ -14,9 +14,9 @@
                 <h3 class="text-lg font-semibold">Quick Links</h3>
                 <ul class="mt-4 space-y-2">
                     <li><a href="/" class="text-sm text-gray-300 hover:text-white transition duration-200">Home</a></li>
-                    <li><a href="#" class="text-sm text-gray-300 hover:text-white transition duration-200">Properties</a></li>
+                    <li><a href="#" class="text-sm text-gray-300 hover:text-white transition duration-200">Team</a></li>
                     <li><a href="#" class="text-sm text-gray-300 hover:text-white transition duration-200">About Us</a></li>
-                    <li><a href="#" class="text-sm text-gray-300 hover:text-white transition duration-200">Contact</a></li>
+                    <li><a href="#" class="text-sm text-gray-300 hover:text-white transition duration-200">Blog</a></li>
                 </ul>
             </div>
 
@@ -24,9 +24,9 @@
             <div>
                 <h3 class="text-lg font-semibold">Contact Us</h3>
                 <ul class="mt-4 space-y-2">
-                    <li class="text-sm text-gray-300">Email: info@stoneteam.com</li>
-                    <li class="text-sm text-gray-300">Phone: +1 (123) 456-7890</li>
-                    <li class="text-sm text-gray-300">Address: 123 Luxury Lane, New York, NY</li>
+                    <li class="text-sm text-gray-300">Email: roshdi013@gmail.com</li>
+                    <li class="text-sm text-gray-300">Phone: 0592213555</li>
+                    <li class="text-sm text-gray-300">Address: Gaza City</li>
                 </ul>
             </div>
 
