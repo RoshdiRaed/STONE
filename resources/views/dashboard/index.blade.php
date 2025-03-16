@@ -1,28 +1,31 @@
 @extends('head')
-<div class="flex h-screen">
+
+<div class="flex h-screen bg-gray-100">
     <!-- Sidebar -->
     <div class="w-64 bg-[#2E303F] text-white p-4">
-        <h2 style="text-align: center" class="text-2xl font-bold mb-6 text-[#e89846]"><a href="/dashboard">Stone Dashboard</a></h2>
+        <h2 class="text-2xl font-bold mb-6 text-[#e89846] text-center">
+            <a href="/dashboard" class="hover:text-white">Stone Dashboard</a>
+        </h2>
         <nav>
             <ul>
                 <li class="mb-4">
-                    <a href="/dashboard" class="flex items-center p-2 hover:bg-gray-700 rounded">
-                        <span>sDash</span>
+                    <a href="/dashboard" class="flex items-center p-2 hover:bg-gray-700 rounded transition duration-300">
+                        <span class="ml-2">Dashboard</span>
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="/blog" class="flex items-center p-2 hover:bg-gray-700 rounded">
-                        <span>Articles</span>
+                    <a href="/blog" class="flex items-center p-2 hover:bg-gray-700 rounded transition duration-300">
+                        <span class="ml-2">Articles</span>
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="/team" class="flex items-center p-2 hover:bg-gray-700 rounded">
-                        <span>Team</span>
+                    <a href="/team" class="flex items-center p-2 hover:bg-gray-700 rounded transition duration-300">
+                        <span class="ml-2">Team</span>
                     </a>
                 </li>
                 <li class="mb-4">
-                    <a href="/profile" class="flex items-center p-2 hover:bg-gray-700 rounded">
-                        <span>Settings</span>
+                    <a href="/profile" class="flex items-center p-2 hover:bg-gray-700 rounded transition duration-300">
+                        <span class="ml-2">Settings</span>
                     </a>
                 </li>
             </ul>
@@ -30,73 +33,65 @@
     </div>
 
     <!-- Main Content -->
-    <div class="flex-1 flex flex-col">
-        <!-- Header -->
-        <header class="bg-white shadow p-4">
-            <div class="flex justify-between items-center">
-                <h1 class="text-xl font-semibold">New Article</h1>
-                <div class="flex items-center space-x-4">
-                    {{-- <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">Save Draft</button> --}}
-                    <button class="px-4 py-2 bg-[#e89846] text-white rounded hover:bg-[#2f3241]">Publish</button>
-                </div>
+    <div class="flex-1 p-8">
+        <h2 class="text-3xl font-semibold text-[#2E303F] mb-6">Create New Article</h2>
+
+        <form action="" method="POST" enctype="multipart/form-data">
+            @csrf
+
+            <!-- Title -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="title">Title</label>
+                <input
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="title" name="title" type="text" placeholder="Enter article title" required>
             </div>
-        </header>
 
-        <!-- Article Form -->
-        <main class="flex-1 p-6 overflow-y-auto">
-            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow p-6">
-                <form>
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-                            Title
-                        </label>
-                        <input
-                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            id="title" type="text" placeholder="Enter article title">
-                    </div>
-
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="category">
-                            Category
-                        </label>
-                        <select
-                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            id="category">
-                            <option value="">Select a category</option>
-                            <option value="tech">Technology</option>
-                            <option value="news">News</option>
-                            <option value="lifestyle">Lifestyle</option>
-                        </select>
-                    </div>
-
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="content">
-                            Content
-                        </label>
-                        <textarea class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
-                            id="content" placeholder="Write your article here..."></textarea>
-                    </div>
-
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="tags">
-                            Tags
-                        </label>
-                        <input
-                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            id="tags" type="text" placeholder="Enter tags separated by commas">
-                    </div>
-
-                    <div class="mb-6">
-                        <label class="block text-gray-700 text-sm font-bold mb-2" for="image">
-                            Featured Image
-                        </label>
-                        <input
-                            class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                            id="image" type="file" accept="image/*">
-                    </div>
-                </form>
+            <!-- Category -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="category">Category</label>
+                <select
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="category" name="category" required>
+                    <option value="">Select a category</option>
+                    <option value="tech">Technology</option>
+                    <option value="news">News</option>
+                    <option value="lifestyle">Lifestyle</option>
+                </select>
             </div>
-        </main>
+
+            <!-- Content -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="content">Content</label>
+                <textarea
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
+                    id="content" name="content" placeholder="Write your article here..." required></textarea>
+            </div>
+
+            <!-- Tags -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="tags">Tags</label>
+                <input
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="tags" name="tags" type="text" placeholder="Enter tags separated by commas" required>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="image">Featured Image</label>
+                <input
+                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    id="image" name="image" type="file" accept="image/*">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="mb-6">
+                <button type="submit" class="w-full px-4 py-2 bg-[#e89846] text-white rounded hover:bg-[#2f3241] transition duration-300">
+                    Publish
+                </button>
+            </div>
+        </form>
     </div>
 </div>
+
 @extends('footer')

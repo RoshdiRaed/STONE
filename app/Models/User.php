@@ -6,7 +6,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Tymon\JWTAuth\Contracts\JWTSubject;
 class User extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
@@ -18,11 +18,9 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'email', 'phone', 'dob', 'gender', 'address', 'skills', 'resume', 'profile_picture', 'website', 'password'
     ];
-
+    
     /**
      * The attributes that should be hidden for serialization.
      *

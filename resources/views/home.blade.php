@@ -2,7 +2,7 @@
 
 <body class="antialiased">
     @include('header')
-
+    
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center bg-no-repeat"
         style="background-image: url('{{ asset('img/hero.jpg') }}');">

@@ -31,17 +31,21 @@
                     href="{{ route('about') }}">About</a>
                 <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                     href="{{ route('blog') }}">Blog</a>
-                <a class="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                    href="/dashboard">Dashboard</a>
             </div>
 
-            <!-- CTA Button -->
+            <!-- CTA Buttons (Sign Up, Log In, Go Pro) -->
             <div class="hidden md:flex md:items-center md:justify-end md:gap-3">
+                <!-- Sign Up Button -->
                 <a class="inline-flex items-center justify-center rounded-xl bg-sky-950 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    href="/form">Join</a>
+                    href="{{ route('dashboard') }}">Log in</a>
+
+                <!-- Pro Button -->
+                <a class="inline-flex items-center justify-center rounded-xl bg-purple-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-150 hover:bg-purple-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                    href="/pro-form">Go Pro</a>
             </div>
         </div>
     </div>
+
 
     <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden">
@@ -54,7 +58,7 @@
             <a class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
                 href="#">About</a>
             <a class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="/form">Affiliation</a>
+                href="/form">Join</a>
         </div>
     </div>
 </header>

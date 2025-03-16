@@ -1,7 +1,22 @@
-@extends('head')
-@extends('header')
+{{-- @extends('head')
+@extends('header') --}}
 
-<body class="bg-gray-100 font-sans">
+@extends('layouts.app') <!-- Assuming you have a layout file -->
+
+@section('content')
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Article Details -->
+        <article class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-lg p-6">
+            <h1 class="text-3xl font-semibold text-gray-800 dark:text-gray-200">{{ $article->title }}</h1>
+            <p class="mt-4 text-gray-600 dark:text-gray-400">{{ $article->content }}</p>
+            <div class="mt-6">
+                <a href="{{ route('dashboard') }}" class="text-blue-600 dark:text-blue-400 hover:underline">Back to Dashboard</a>
+            </div>
+        </article>
+    </div>
+@endsection
+
+{{-- <body class="bg-gray-100 font-sans">
     <!-- Main Content -->
     <main class="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 mt-20">
         <!-- Featured Post -->
@@ -88,6 +103,6 @@
         </section>
     </main>
 
-</body>
+</body> --}}
 
-@extends('footer')
+{{-- @extends('footer') --}}

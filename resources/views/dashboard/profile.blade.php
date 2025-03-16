@@ -1,5 +1,6 @@
 @extends('head')
 @extends('header')
+
 <body class="bg-gray-100 font-sans">
     <div class="min-h-screen flex items-center justify-center p-6" data-aos="fade-up" data-aos-delay="100">
         <div class="max-w-2xl w-full bg-white rounded-lg shadow-lg overflow-hidden">
@@ -8,22 +9,21 @@
                 <div class="flex items-center space-x-4">
                     <div class="relative">
                         <img class="h-24 w-24 rounded-full object-cover border-4 border-white"
-                            src="{{ asset('img/img.png') }}" alt="Profile picture">
+                        src="{{ asset('storage/' . $submission->profile_picture) }}" alt="Profile picture">
+
                     </div>
                     <div class="text-white">
-                        <h2 class="text-2xl font-bold">John Doe</h2>
-                        <p class="text-sm opacity-75">@johndoe</p>
+                        <h2 class="text-2xl font-bold">{{ $submission->name }}</h2>
+                        <p class="text-sm opacity-75">{{ '@' . strtolower(str_replace(' ', '', $submission->name)) }}</p>
                     </div>
                 </div>
             </div>
 
             <!-- Profile Details -->
             <div class="p-6">
-                <!-- Bio -->
                 <div class="mb-6">
                     <h3 class="text-gray-700 text-lg font-semibold mb-2">Bio</h3>
-                    <p class="text-gray-600">Content creator and tech enthusiast. Passionate about sharing knowledge and
-                        building communities.</p>
+                    <p class="text-gray-600">{{ $submission->skills ?? 'No skills provided.' }}</p>
                 </div>
 
                 <!-- Stats -->
@@ -43,25 +43,23 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
-                        <span>San Francisco, CA</span>
+                        <span>{{ $submission->address ?? 'No address provided.' }}</span>
                     </div>
                     <div class="flex items-center text-gray-600">
                         <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                         </svg>
-                        <span>johndoe@email.com</span>
+                        <span>{{ $submission->email }}</span>
                     </div>
                     <div class="flex items-center text-gray-600">
                         <svg class="h-5 w-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        <span>Joined March 2023</span>
+                        <span>Joined {{ $submission->created_at->format('F Y') }}</span>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Recent Articles -->
@@ -80,8 +78,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-
-    @extends('footer')
 </body>
+
+@extends('footer')

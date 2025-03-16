@@ -99,6 +99,14 @@ return [
         ],
     ],
 
+    'guards' => [
+        'web' => [
+            'driver' => 'session',
+            'provider' => 'users',
+        ],
+    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | Password Confirmation Timeout
