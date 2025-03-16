@@ -1,113 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+  <a href="github.com/roshdiraed" target="_blank">
+    <img src="./public/img/logo-removebg-preview.png" width="400" alt="Laravel Logo">
+  </a>
+</p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="https://github.com/laravel/framework/actions">
+    <img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version">
+  </a>
+  <a href="https://packagist.org/packages/laravel/framework">
+    <img src="https://img.shields.io/packagist/l/laravel/framework" alt="License">
+  </a>
 </p>
 
 # Stone Team Laravel Project
 
-A dynamic professional website built with Laravel for Stone Team, showcasing their services and expertise. This project demonstrates modern web development techniques using Laravel and Tailwind CSS.
+This project is a professional website built with Laravel for **Stone Team**, designed to showcase their services, expertise, and projects. It incorporates modern web development techniques using Laravel, Laravel Breeze, and Tailwind CSS to deliver a fast, secure, and responsive web experience.
+
+## About Stone Team
+
+Stone Team is a dynamic and innovative company specializing in delivering high-quality solutions in web development, digital transformation, and IT consulting. Their mission is to help businesses grow by providing cutting-edge technology solutions tailored to their needs. With a team of experienced professionals, Stone Team ensures efficiency, scalability, and security in every project.
+
+## Key Features
+
+- **User Authentication:** Secure login, registration, password reset, and email verification powered by Laravel Breeze.
+- **Dynamic UI:** Designed with Tailwind CSS for a sleek, mobile-responsive layout.
+- **Service Showcase:** Highlighting the team's expertise and offerings.
+- **Client Engagement:** Testimonials, case studies, and FAQs to establish trust.
+- **Interactive Animations:** Enhanced user experience with AOS (Animate on Scroll) animations.
 
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel is a powerful PHP framework known for its expressive syntax and developer-friendly tools, including:
+- Routing
+- ORM (Eloquent)
+- Database migrations
+- Background job processing
+- Real-time event broadcasting
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+For more details, visit the official [Laravel Documentation](https://laravel.com/docs).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Setup Guide
 
-## Learning Laravel
+Follow these steps to set up the project locally:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Project Setup
-
-To get this project running locally, follow these steps:
-
-1. Clone the repository
-2. Install PHP dependencies:
+1. **Clone the repository:**
+   ```sh
+   git clone https://github.com/your-repo.git
+   cd your-project
    ```
+2. **Install dependencies:**
+   ```sh
    composer install
-   ```
-3. Install JavaScript dependencies:
-   ```
    npm install
    ```
-4. Create a copy of your .env file:
-   ```
+3. **Configure environment:**
+   ```sh
    cp .env.example .env
-   ```
-5. Generate an app encryption key:
-   ```
    php artisan key:generate
    ```
-6. Configure your database in the .env file
-7. Run database migrations (if any):
+4. **Set up the database:**
+   - Update `.env` with database details
+   - Run migrations:
+     ```sh
+     php artisan migrate
+     ```
+5. **Install Laravel Breeze:**
+   ```sh
+   php artisan breeze:install
    ```
-   php artisan migrate
-   ```
-8. Start the development server:
-   ```
+6. **Compile assets:**
+   ```sh
    npm run dev
+   ```
+7. **Start the server:**
+   ```sh
    php artisan serve
    ```
 
-## Project Features
-
-- Responsive design with Tailwind CSS
-- Hero section with call-to-action buttons
-- Services showcase
-- Team member profiles
-- Client testimonials
-- FAQ section
-- Case studies/success stories
-- AOS (Animate on Scroll) animations
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
-
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contributions are welcome! Please follow Laravel’s [contribution guidelines](https://laravel.com/docs/contributions).
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-source and follows the [MIT license](https://opensource.org/licenses/MIT).

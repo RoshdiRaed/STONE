@@ -2,10 +2,10 @@
 
 <body class="antialiased">
     @include('header')
-    
+
     <!-- Hero Section -->
     <section class="relative bg-cover bg-center bg-no-repeat"
-        style="background-image: url('{{ asset('img/hero.jpg') }}');">
+        style="background-image: url('{{ asset('img/hero.png') }}');">
         <div class="absolute inset-0 bg-gradient-to-r from-[#17161c]/95 to-[#17161c]/25 backdrop-blur-sm"></div>
 
         <div class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8">

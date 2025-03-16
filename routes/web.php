@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\FormController;
@@ -10,8 +11,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
-// Home route
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // About route
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -33,10 +32,12 @@ Route::get('/articles', [DashboardController::class, 'index']);
 // Blog route
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 
-// Default route
+// Home route
 Route::get('/', function () {
     return view('home');
 });
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 
 // Dashboard route
 Route::get('/dashboard', function () {
@@ -56,4 +57,4 @@ Route::post('/create-post', [ArticleController::class, 'store'])->middleware('au
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
 
 // Authentication routes
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

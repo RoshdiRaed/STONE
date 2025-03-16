@@ -32,11 +32,12 @@
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
                 <!-- iPhone Icon -->
-                <div class="mr-4">
+                <div class="mr-4 flex items-center justify-center">
                     <a href="{{ route('create-post') }}">
-                        <img src="{{ asset('./img/icons8-create-24.png') }}" alt="create">
+                        <img src="{{ asset('./img/create.svg') }}" alt="create" class="w-auto h-8">
                     </a>
                 </div>
+
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button
