@@ -120,9 +120,6 @@
                     </script>
                 @endif
 
-
-
-
                 <div class="mt-8">
                     <a href="{{ route('blog') }}" class="text-blue-600 hover:underline">← Back to Blog</a>
                 </div>
