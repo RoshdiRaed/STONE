@@ -11,6 +11,11 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
+// Home route
+Route::get('/', function () {
+    return view('home');
+});
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 // About route
 Route::get('/about', [AboutController::class, 'index'])->name('about');
@@ -27,17 +32,10 @@ Route::get('/team', [TeamMemberController::class, 'index'])->name('team');
 Route::post('/team/store', [TeamMemberController::class, 'store'])->name('team.store');
 
 // Dashboard routes
-Route::get('/articles', [DashboardController::class, 'index']);
+// Route::get('/articles', [DashboardController::class, 'index'])->name('articles');
 
 // Blog route
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
-
-// Home route
-Route::get('/', function () {
-    return view('home');
-});
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 
 // Dashboard route
 Route::get('/dashboard', function () {
@@ -55,6 +53,14 @@ Route::middleware('auth')->group(function () {
 Route::get('/create-post', [ArticleController::class, 'create'])->middleware('auth')->name('create-post');
 Route::post('/create-post', [ArticleController::class, 'store'])->middleware('auth');
 Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('articles.show');
+Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->middleware('auth')->name('articles.edit');
+Route::put('/articles/{article}', [ArticleController::class, 'update'])->middleware('auth')->name('articles.update');
+Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->middleware('auth')->name('articles.destroy');
 
+
+// Pro
+Route::get('/pro-form', function () {
+    return view('pro');
+});
 // Authentication routes
 require __DIR__ . '/auth.php';

@@ -22,6 +22,9 @@
                     <x-nav-link :href="route('home')" :active="request()->routeIs('home.index')">
                         {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('blog')" :active="request()->routeIs('blog')">
+                        {{ __('Blog') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">
                         {{ __('Profile') }}
                     </x-nav-link>

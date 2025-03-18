@@ -9,8 +9,12 @@ class BlogController extends Controller
 {
     public function index()
     {
-        // Fetch articles with the associated user data
-        $articles = Article::with('user')->get();
-        return view('Blog.blog', compact('articles')); // Pass articles to your view
+        // Get all articles ordered by creation date (newest first)
+        $articles = Article::with('user')
+            ->orderBy('created_at', 'desc')
+            ->get();
+
+        return view('Blog.blog', ['articles' => $articles]);
     }
+
 }
