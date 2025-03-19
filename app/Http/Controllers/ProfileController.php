@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
@@ -12,9 +13,14 @@ use Illuminate\View\View;
 class ProfileController extends Controller
 {
 
-    /**
-     * Display the user's profile form.
-     */
+    public function rules()
+    {
+        return [
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:10240', // 10MB max
+            'resume' => 'nullable|mimes:pdf,docx,doc|max:10240', // 10MB max
+        ];
+    }
+
     public function edit(Request $request): View
     {
         // dd($request->user());

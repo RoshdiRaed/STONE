@@ -52,7 +52,7 @@
 
                     <!-- Custom Confirmation Dialog -->
                     <div id="confirmDialog"
-                        class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+                        class="fixed inset-0 items-center flex justify-center bg-black bg-opacity-50 z-50 hidden">
                         <div class="bg-white rounded-xl p-6 max-w-md w-full shadow-xl">
                             <h3 class="text-lg font-semibold text-gray-900 mb-2">Confirm Deletion</h3>
                             <p class="text-gray-600 mb-6">Are you sure you want to delete this post? This action cannot
@@ -133,7 +133,7 @@
 
             @if (isset($articles) && $articles->count() > 0)
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="{{ asset('img/img.png') }}" alt="Featured post" class="w-full h-64 object-cover">
+                    <img src="{{ asset('img/titlepost.png') }}" alt="Featured post" class="w-full h-64 object-cover">
                     <div class="p-6">
                         <h2 class="text-2xl font-bold text-gray-800 mb-2">{{ $articles->first()->title }}</h2>
                         <p class="text-gray-600 mb-4">{{ Str::limit($articles->first()->content, 150) }}</p>
@@ -151,7 +151,7 @@
                 <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12 mt-12">
                     @foreach ($articles->skip(1) as $article)
                         <div class="bg-white rounded-lg shadow-lg overflow-hidden" data-aos="fade-left">
-                            <img src="{{ asset('img/img.png') }}" alt="Post" class="w-full h-48 object-cover">
+                            <img src="{{ asset('img/post.png') }}" alt="Post" class="w-full h-48 object-cover">
                             <div class="p-4">
                                 <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ $article->title }}</h3>
                                 <p class="text-gray-600 text-sm mb-4">{{ Str::limit($article->content, 100) }}</p>

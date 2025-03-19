@@ -9,10 +9,10 @@
             @csrf
 
             <!-- Image Upload -->
-            {{-- <div class="mb-4">
+            <div class="mb-4">
                 <label for="image" class="block text-gray-700">Image</label>
                 <input type="file" id="image" name="image" class="mt-1 p-2 border rounded w-full" accept="image/*">
-            </div> --}}
+            </div>
 
 
             <!-- Post Title -->

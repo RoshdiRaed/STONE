@@ -9,6 +9,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\RoomController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Home route
@@ -62,5 +63,18 @@ Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->mid
 Route::get('/pro-form', function () {
     return view('pro');
 });
+
+// Rooms
+
+Route::get('/room/home', [RoomController::class, 'home'])->name('room');
+
+Route::get('/room/projects', function () {
+    return view('room.project');
+});
+
+Route::get('/room/chat', function () {
+    return view('room.chat');
+})->name('room.chat');
+
 // Authentication routes
 require __DIR__ . '/auth.php';

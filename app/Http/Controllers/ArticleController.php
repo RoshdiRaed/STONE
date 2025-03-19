@@ -27,7 +27,7 @@ class ArticleController extends Controller
             'title' => $request->title,
             'content' => $request->content,
             'category' => $request->category ?? 'default_category',
-            // 'image' => $request->image ?? 'public/img/img.png',
+            'image' => $request->image ?? 'public/img/img.png',
         ]);
 
         return redirect()->route('dashboard')->with('success', 'Post created successfully!');
@@ -71,7 +71,7 @@ class ArticleController extends Controller
         }
 
         $request->validate([
-            // 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'title' => 'required|string|max:255',
             'content' => 'required|string',
             'category' => 'string|max:255'
