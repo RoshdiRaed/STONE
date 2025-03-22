@@ -10,6 +10,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\CategoryController;
+
+
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Home route
@@ -57,6 +60,9 @@ Route::get('/articles/{article}', [ArticleController::class, 'show'])->name('art
 Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->middleware('auth')->name('articles.edit');
 Route::put('/articles/{article}', [ArticleController::class, 'update'])->middleware('auth')->name('articles.update');
 Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->middleware('auth')->name('articles.destroy');
+
+// In your routes/web.php
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 
 // Pro

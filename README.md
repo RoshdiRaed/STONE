@@ -1,6 +1,6 @@
 <p align="center">
   <a href="github.com/roshdiraed" target="_blank">
-    <img src="./public/img/logo-removebg-preview.png" width="400" alt="Laravel Logo">
+    <img src="./public/img/logostone.png" width="400" alt="Laravel Logo">
   </a>
 </p>
 

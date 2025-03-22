@@ -20,18 +20,28 @@ class ArticleController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:5048',  // Validate the image
         ]);
 
+        // Handle image upload if provided
+        $imagePath = 'public/img/img.png';  // Default image path
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('articles', 'public');  // Store the image in storage/articles
+        }
+
+        // Create the article
         Article::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
             'content' => $request->content,
             'category' => $request->category ?? 'default_category',
-            'image' => $request->image ?? 'public/img/img.png',
+            'image' => $imagePath,  // Save the path to the image in the database
         ]);
 
         return redirect()->route('dashboard')->with('success', 'Post created successfully!');
     }
+
 
     // Show a specific article
     public function show($id)
@@ -77,15 +87,30 @@ class ArticleController extends Controller
             'category' => 'string|max:255'
         ]);
 
+        // Handle image upload if provided
+        $imagePath = $article->image;  // Keep the current image by default
+
+        if ($request->hasFile('image')) {
+            // Delete the old image from storage if it exists
+            if ($article->image && file_exists(storage_path('app/public/' . $article->image))) {
+                unlink(storage_path('app/public/' . $article->image));
+            }
+
+            // Store the new image
+            $imagePath = $request->file('image')->store('articles', 'public');
+        }
+
+        // Update the article
         $article->update([
             'title' => $request->title,
             'content' => $request->content,
-            'image' => $request->image ?? $article->image,
+            'image' => $imagePath,  // Save the updated image path in the database
             'category' => $request->category ?? $article->category,
         ]);
 
         return redirect()->route('articles.show', $article->id)->with('success', 'Post updated successfully!');
     }
+
 
     // Delete an article
     public function destroy($id)

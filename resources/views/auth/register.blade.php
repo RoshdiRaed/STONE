@@ -60,7 +60,7 @@
         <div class="flex justify-center mt-10">
             <div class="animate__animated animate__fadeIn">
                 <a href="/">
-                    <img class="h-16 w-auto" src="{{ asset('img/logo-removebg-preview.png') }}" alt="Website Logo">
+                    <img class="h-16 w-auto" src="{{ asset('img/logostone.png') }}" alt="Website Logo">
                 </a>
             </div>
         </div>

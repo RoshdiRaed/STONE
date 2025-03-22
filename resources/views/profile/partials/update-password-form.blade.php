@@ -3,13 +3,19 @@
     body {
         background-color: #12141b;
     }
-      /* Adjusting input fields for better fit */
-      .form-input {
-        width: 100%; /* Full width */
-        padding: 12px 16px; /* Adjust padding for better appearance */
-        font-size: 1rem; /* Make the text readable */
-        border: 1px solid #ccc; /* Add border for better visibility */
-        border-radius: 8px; /* Smooth borders */
+
+    /* Adjusting input fields for better fit */
+    .form-input {
+        width: 100%;
+        /* Full width */
+        padding: 12px 16px;
+        /* Adjust padding for better appearance */
+        font-size: 1rem;
+        /* Make the text readable */
+        border: 1px solid #ccc;
+        /* Add border for better visibility */
+        border-radius: 8px;
+        /* Smooth borders */
     }
 
     /* Adjust the select input (gender) to also stretch to full width */
@@ -52,19 +58,22 @@
 
         <div>
             <x-input-label for="update_password_current_password" :value="__('Current Password')" />
-            <x-text-input id="update_password_current_password" name="current_password" type="password" class="form-input block mt-1" autocomplete="current-password" />
+            <x-text-input id="update_password_current_password" name="current_password" type="password"
+                class="form-input block mt-1" autocomplete="current-password" />
             <x-input-error :messages="$errors->updatePassword->get('current_password')" class="Update Password2" />
         </div>
 
         <div>
             <x-input-label for="update_password_password" :value="__('New Password')" />
-            <x-text-input id="update_password_password" name="password" type="password" class="form-input block mt-1" autocomplete="new-password" />
+            <x-text-input id="update_password_password" name="password" type="password" class="form-input block mt-1"
+                autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
         </div>
 
         <div>
             <x-input-label for="update_password_password_confirmation" :value="__('Confirm Password')" />
-            <x-text-input id="update_password_password_confirmation" name="password_confirmation" type="password" class="form-input block mt-1" autocomplete="new-password" />
+            <x-text-input id="update_password_password_confirmation" name="password_confirmation" type="password"
+                class="form-input block mt-1" autocomplete="new-password" />
             <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="Update Password" />
         </div>
 
@@ -72,13 +81,10 @@
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'password-updated')
-                <p
-                    x-data="{ show: true }"
-                    x-show="show"
-                    x-transition
-                    x-init="setTimeout(() => show = false, 2000)"
-                    class="text-sm text-gray-600 dark:text-gray-400"
-                >{{ __('Saved.') }}</p>
+                <div x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
+                    class="fixed top-5 right-5 bg-green-500 text-white py-2 px-4 rounded shadow-lg">
+                    {{ __('Password updated successfully!') }}
+                </div>
             @endif
         </div>
     </form>

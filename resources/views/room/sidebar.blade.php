@@ -5,7 +5,7 @@
     <div class="flex flex-col h-full bg-gray-800 text-white transition-all duration-300">
         <div class="flex items-center justify-between p-4 border-b border-gray-700">
             <div class="flex items-center">
-                <img src="{{ asset('img/logo-removebg-preview.png') }}" alt="" class="w-10 h-10">
+                <img src="{{ asset('img/logostone.png') }}" alt="" class="w-10 h-10">
                 <span class="ml-2 text-lg font-semibold" x-show="sidebarOpen">Stone Team</span>
             </div>
             <button @click="sidebarOpen = !sidebarOpen" class="p-1 rounded-md hover:bg-gray-700">

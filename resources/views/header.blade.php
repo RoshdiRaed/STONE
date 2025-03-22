@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="flex shrink-0">
                 <a aria-current="page" class="flex items-center" href="/">
-                    <img class="h-12 w-auto" src="{{ asset('img/logo-removebg-preview.png') }}" alt="">
+                    <img class="h-12 w-auto" src="{{ asset('img/logostone.png') }}" alt="">
                     <p class="sr-only">Website Title</p>
                 </a>
             </div>
