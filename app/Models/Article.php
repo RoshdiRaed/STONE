@@ -13,7 +13,7 @@ class Article extends Model
     use HasFactory;
 
 
-    // Add the fillable property to allow mass assignment
+
     protected $fillable = ['title', 'category', 'content', 'tags', 'image', 'user_id'];
 
     public function user()

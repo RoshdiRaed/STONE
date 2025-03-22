@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    // In DashboardController.php
+
     public function index()
     {
         $articles = Article::where('user_id', Auth::id())

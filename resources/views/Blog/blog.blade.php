@@ -1,10 +1,6 @@
 @extends('head')
 @extends('header')
 
-{{-- <h1>{{$article->title}}</h1>
-<h1>{{$article->content}}</h1> --}}
-
-{{-- @section('content') --}}
 <div class="max-w-screen-xl mx-auto px-4 py-12 sm:px-6 lg:px-8 mt-24 mb-20">
     @if (isset($article))
         <!-- Single Article View -->
@@ -16,7 +12,6 @@
                         alt="{{ $article->user->name ?? 'Anonymous' }}"
                         class="w-12 h-12 rounded-full border border-gray-300 shadow-sm object-cover">
                     <span class="ml-2">{{ $article->user->name ?? 'Anonymous' }}</span>
-                    {{-- <span>{{ $article->user->name ?? 'Anonymous' }}</span> --}}
                     <span class="mx-2">•</span>
                     <span>{{ $article->created_at->format('F d, Y') }}</span>
                     <span class="mx-2">•</span>
@@ -36,6 +31,7 @@
 
                 @if (Auth::check() && Auth::id() == $article->user_id)
                     <div class="flex mt-8 pt-4 border-t border-gray-200">
+
                         <!-- Edit Post Button -->
                         <a href="{{ route('articles.edit', $article->id) }}"
                             class="inline-flex items-center justify-center rounded-xl bg-teal-600 px-4 py-2 text-sm font-semibold text-white shadow-lg transition-all duration-150 hover:bg-teal-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
@@ -194,7 +190,6 @@
         </section>
 
 
-        <!-- Newsletter Signup -->
         <section
             class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl shadow-lg p-8 text-center transform transition-transform hover:scale-101"
             data-aos="fade-down" data-aos-delay="100">
@@ -212,8 +207,5 @@
         </section>
     @endif
 </div>
-
-
-{{-- @endsection --}}
 
 @extends('footer')

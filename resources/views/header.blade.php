@@ -2,7 +2,7 @@
     class="fixed inset-x-0 top-0 z-30 w-full max-w-screen-md mx-auto border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
     <div class="px-4">
         <div class="flex items-center justify-between">
-            <!-- Logo -->
+
             <div class="flex shrink-0">
                 <a aria-current="page" class="flex items-center" href="/">
                     <img class="h-12 w-auto" src="{{ asset('img/logostone.png') }}" alt="">

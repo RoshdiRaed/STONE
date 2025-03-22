@@ -61,7 +61,6 @@ Route::get('/articles/{article}/edit', [ArticleController::class, 'edit'])->midd
 Route::put('/articles/{article}', [ArticleController::class, 'update'])->middleware('auth')->name('articles.update');
 Route::delete('/articles/{article}', [ArticleController::class, 'destroy'])->middleware('auth')->name('articles.destroy');
 
-// In your routes/web.php
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
 

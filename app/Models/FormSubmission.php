@@ -9,9 +9,8 @@ class FormSubmission extends Model
 {
     use HasFactory;
 
-    // protected $connection = 'stone';
     protected $connection = 'mysql';
-    protected $table = 'form_submissions'; 
+    protected $table = 'form_submissions';
 
     protected $fillable = [
         'name',

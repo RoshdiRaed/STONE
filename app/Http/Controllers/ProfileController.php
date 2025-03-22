@@ -29,9 +29,6 @@ class ProfileController extends Controller
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
         $user = $request->user();
@@ -49,7 +46,7 @@ class ProfileController extends Controller
         }
 
         if ($request->hasFile('profile_picture')) {
-            // Delete old file if exists
+
             if ($user->profile_picture && Storage::exists('public/' . $user->profile_picture)) {
                 Storage::delete('public/' . $user->profile_picture);
             }
@@ -79,7 +76,7 @@ class ProfileController extends Controller
 
         Auth::logout();
 
-        // Delete files if they exist
+
         if ($user->resume && Storage::exists('public/' . $user->resume)) {
             Storage::delete('public/' . $user->resume);
         }

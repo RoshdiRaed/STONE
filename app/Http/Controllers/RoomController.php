@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class RoomController extends Controller
 {
-    // Rename the method to 'home'
+
     public function home()
     {
-        // Example data (replace with database queries)
         $projects = [
             [
                 'name' => 'E-Commerce Redesign Project',

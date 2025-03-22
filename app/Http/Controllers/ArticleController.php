@@ -8,13 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ArticleController extends Controller
 {
-    // Show the form to create a new article
+
     public function create()
     {
         return view('posts.create');
     }
 
-    // Store a new article
+
     public function store(Request $request)
     {
         $request->validate([
@@ -30,7 +30,7 @@ class ArticleController extends Controller
             $imagePath = $request->file('image')->store('articles', 'public');  // Store the image in storage/articles
         }
 
-        // Create the article
+
         Article::create([
             'user_id' => Auth::id(),
             'title' => $request->title,
@@ -43,7 +43,7 @@ class ArticleController extends Controller
     }
 
 
-    // Show a specific article
+
     public function show($id)
     {
         try {
@@ -57,7 +57,7 @@ class ArticleController extends Controller
         }
     }
 
-    // Show form to edit an article
+
     public function edit($id)
     {
         $article = Article::findOrFail($id);
@@ -70,7 +70,7 @@ class ArticleController extends Controller
         return view('posts.edit', ['article' => $article]);
     }
 
-    // Update an article
+
     public function update(Request $request, $id)
     {
         $article = Article::findOrFail($id);
@@ -100,7 +100,6 @@ class ArticleController extends Controller
             $imagePath = $request->file('image')->store('articles', 'public');
         }
 
-        // Update the article
         $article->update([
             'title' => $request->title,
             'content' => $request->content,
@@ -111,8 +110,6 @@ class ArticleController extends Controller
         return redirect()->route('articles.show', $article->id)->with('success', 'Post updated successfully!');
     }
 
-
-    // Delete an article
     public function destroy($id)
     {
         $article = Article::findOrFail($id);

@@ -1,4 +1,4 @@
-@extends('layouts.app') <!-- Assuming this is the layout with @yield('content') -->
+@extends('layouts.app')
 @extends('head')
 
 @section('content')
