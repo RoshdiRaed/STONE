@@ -26,9 +26,17 @@
                     <a href="#" class="btn-primary px-6 py-3 rounded-lg text-white font-semibold">
                         Request a Service
                     </a>
-                    <a href="/form" class="btn-secondary px-6 py-3 rounded-lg text-white font-semibold">
-                        Join the Team
-                    </a>
+                    @auth
+                        <a href="{{ route('profile.edit') }}"
+                            class="btn-secondary px-6 py-3 rounded-lg text-white font-semibold">
+                            Join the Team
+                        </a>
+                    @else
+                        <a id="login-popup-button" href="{{ route('login') }}"
+                            class="btn-secondary px-6 py-3 rounded-lg text-white font-semibold">
+                            Join the Team
+                        </a>
+                    @endauth
                 </div>
             </div>
         </div>
@@ -63,8 +71,7 @@
                 </div>
 
                 <div class="relative overflow-hidden " data-aos="fade-left">
-                    <img src="{{ asset('img/team-spirit2.png') }}"
-                        alt="Stone Team Collaboration"
+                    <img src="{{ asset('img/team-spirit2.png') }}" alt="Stone Team Collaboration"
                         class="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-"></div>
@@ -358,6 +365,10 @@
                 alt="Deutsche Welle" class="h-9 sm:h-11 mx-auto" data-aos="fade-up" data-aos-delay="600">
         </div>
     </div>
+    <!-- popup -->
+
+    @extends('popup')
+
 
     <!-- Footer -->
     @include('footer')

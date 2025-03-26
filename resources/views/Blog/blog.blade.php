@@ -172,7 +172,7 @@
                                     <span>{{ $article->created_at->format('F d, Y') }}</span>
                                 </div>
                                 <a href="{{ route('articles.show', $article->id) }}"
-                                    class="text-blue-600 hover:underline">Read More</a>
+                                    class="text-blue-600 hover:underline">Read More →</a>
                             </div>
                         </div>
                     @endforeach

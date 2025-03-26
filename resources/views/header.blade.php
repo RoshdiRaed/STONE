@@ -1,5 +1,5 @@
 <header
-    class="fixed inset-x-0 top-0 z-30 w-full max-w-screen-md mx-auto border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg">
+    class="fixed inset-x-0 top-0 z-30 w-full max-w-screen-md mx-auto border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-lg transition-transform duration-300 ease-in-out transform">
     <div class="px-4">
         <div class="flex items-center justify-between">
 
@@ -39,8 +39,10 @@
             <div class="hidden md:flex md:items-center md:justify-end md:gap-3">
                 @guest
                 <!-- Login Button (Only show if not logged in) -->
-                <a class="inline-flex items-center justify-center rounded-xl bg-sky-950 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
-                    href="{{ route('dashboard') }}">Log in</a>
+                <button id="login-popup-button"
+                    class="inline-flex items-center justify-center rounded-xl bg-sky-950 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-sky-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                    Log in
+                </button>
                 @else
                 <!-- User Avatar Dropdown (Only show if logged in) -->
                 <div class="relative" x-data="{ open: false }">
@@ -75,7 +77,8 @@
             </div>
         </div>
     </div>
-
+        </div>
+    </div>
 
     <!-- Mobile Menu (Hidden by default) -->
     <div id="mobile-menu" class="hidden md:hidden">
@@ -91,23 +94,26 @@
                 href="{{ route('room') }}">Rooms</a>
 
             @guest
-            <a class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="{{ route('dashboard') }}">Log in</a>
+                <a class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                    href="{{ route('dashboard') }}">Log in</a>
             @else
-            <!-- Mobile user menu -->
-            <a href="{{ route('dashboard') }}" class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
-                Profile
-            </a>
-            <form method="POST" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="block w-full text-left rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
-                    Log Out
-                </button>
-            </form>
+                <a href="{{ route('dashboard') }}"
+                    class="block rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
+                    Profile
+                </a>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit"
+                        class="block w-full text-left rounded-lg px-2 py-2 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900">
+                        Log Out
+                    </button>
+                </form>
             @endguest
         </div>
     </div>
 </header>
+
+@extends('popup')
 
 <!-- Mobile Menu Toggle Script -->
 <script>

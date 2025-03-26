@@ -8,12 +8,10 @@
         <!-- Main Content -->
         <div class="flex-1 overflow-auto bg-gray-50">
             <!-- Header with sticky positioning -->
-            <header class="sticky top-0 z-10 bg-white shadow-sm">
-                <!-- Previous header code remains the same -->
-            </header>
+            @extends('header')
 
             <!-- Main Content Area -->
-            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mt-20">
                 <!-- Dashboard Stats -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                     <div class="bg-white rounded-lg shadow p-6">
@@ -73,10 +71,25 @@
                     </div>
                 </div>
 
+                <!-- Meeting Section -->
+                <div class="bg-white rounded-lg shadow mb-8">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-medium text-gray-900">Team Meetings</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 text-sm mb-4">Schedule or join a meeting to discuss project details.</p>
+                        <button
+                            class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 focus:outline-none">
+                            Schedule Meeting
+                        </button>
+                    </div>
+                </div>
+
+
                 <!-- Additional content sections -->
                 @yield('content')
             </main>
         </div>
+        @extends('footer')
     </div>
 </body>
-@extends('footer')

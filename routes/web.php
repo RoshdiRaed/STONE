@@ -12,7 +12,6 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\CategoryController;
 
-
 use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Home route
